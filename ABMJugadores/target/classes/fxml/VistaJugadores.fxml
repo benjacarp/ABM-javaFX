@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.7961432506887053" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" styleClass="main-panel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.benja.controlador.ControladorJugadores">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="main-panel">
+            <children>
+                <ToolBar layoutX="64.0" layoutY="37.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <Button fx:id="btnVer" disable="true" mnemonicParsing="false" onMouseClicked="#ver" text="Ver">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                        <Button fx:id="btnAgregar" mnemonicParsing="false" onMouseClicked="#agregar" text="Agregar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                        <Button fx:id="btnModificar" disable="true" mnemonicParsing="false" onMouseClicked="#modificar" text="Modificar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                        <Button fx:id="btnEliminar" disable="true" mnemonicParsing="false" onMouseClicked="#eliminar" text="Eliminar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                        <Button fx:id="btnVolver" mnemonicParsing="false" onMouseClicked="#volver" text="Volver">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                    </items>
+                </ToolBar>
+                <TableView fx:id="tabla" layoutX="23.0" layoutY="80.0" prefHeight="231.0" prefWidth="538.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="80.0">
+                    <columns>
+                  <TableColumn fx:id="colId" prefWidth="34.0" resizable="false" text="Id" />
+                        <TableColumn fx:id="colApellido" prefWidth="136.0" resizable="false" text="Apellido" />
+                        <TableColumn fx:id="colNombre" prefWidth="118.0" resizable="false" text="Nombre" />
+                        <TableColumn fx:id="colFecha" prefWidth="91.0" resizable="false" text="Fecha de Nacimiento" />
+                        <TableColumn fx:id="colPos" prefWidth="108.0" resizable="false" text="Posicion" />
+                    </columns>
+                </TableView>
+            <TextField fx:id="campoBuscar" layoutX="30.0" layoutY="55.0" onKeyTyped="#busqueda" prefHeight="25.0" prefWidth="538.0" promptText="buscar..." />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="panelEdicion" minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="625.0">
+            <children>
+                <Label layoutX="79.0" layoutY="28.0" prefWidth="45.0" text="Nombre" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                <TextField fx:id="campoNombre" layoutX="55.0" layoutY="5.0" onKeyTyped="#tipearCampoNombre" prefHeight="25.0" prefWidth="95.0" AnchorPane.topAnchor="5.0" />
+                <TextField fx:id="campoApellido" layoutX="205.0" layoutY="6.0" onKeyTyped="#tipearCampoApellido" prefHeight="25.0" prefWidth="95.0" AnchorPane.topAnchor="5.0" />
+                <Label layoutX="154.0" layoutY="10.0" prefWidth="45.0" text="Apellido" AnchorPane.topAnchor="10.0" />
+                <Label layoutX="23.0" layoutY="38.0" prefHeight="17.0" prefWidth="80.0" text="Fecha de Nac." AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                <ComboBox fx:id="comboPosicion" layoutX="287.0" layoutY="34.0" prefHeight="25.0" prefWidth="136.0" promptText="Seleccione" AnchorPane.topAnchor="40.0" />
+                <Button fx:id="btnGuardar" layoutX="436.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#guardar" prefHeight="40.0" prefWidth="67.0" text="Dar Alta">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnCancelar" layoutX="510.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#cancelar" prefHeight="40.0" prefWidth="67.0" text="Cancelar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="242.0" layoutY="44.0" prefWidth="45.0" text="Posicion" AnchorPane.topAnchor="45.0" />
+            <Label layoutX="313.0" layoutY="10.0" prefWidth="45.0" text="DNI" AnchorPane.topAnchor="10.0" />
+            <TextField fx:id="campoDni" layoutX="341.0" layoutY="6.0" prefHeight="25.0" prefWidth="80.0" AnchorPane.topAnchor="5.0" />
+            <TextField fx:id="campoFechaNac" layoutX="90.0" layoutY="40.0" prefHeight="25.0" prefWidth="129.0" promptText="dd/mm/aaaa" />
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>
